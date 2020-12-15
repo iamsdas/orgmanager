@@ -58,5 +58,7 @@ jobs:
     - name: Install composer dependencies
       run: COMPOSER_DISCARD_CHANGES=true composer update --no-interaction --prefer-source
     
+    - run: echo "$PWD/vendor/bin" >> $GITHUB_PATH
+    
     - name: Run Scripts
-      run: vendor/bin/phpunit --coverage-text --coverage-clover=coverage.xml
+      run: phpunit --coverage-text --coverage-clover=coverage.xml
