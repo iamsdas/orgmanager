@@ -56,7 +56,7 @@ jobs:
       run: composer validate
 
     - name: Install composer dependencies
-      run: COMPOSER_DISCARD_CHANGES=true composer update --no-interaction --prefer-source
+      run: COMPOSER_DISCARD_CHANGES=true composer install --no-interaction --prefer-source
     
     - run: echo "$PWD/vendor/bin" >> $GITHUB_PATH
     
